@@ -17,8 +17,9 @@ img {
   height: auto;
 }
 body {
-  background-color: rgb(37, 39, 39);
-  background: linear-gradient(to top, #4e4e4e, #000000);
+  height: 100vh;
+  background: linear-gradient(to top, #ffffff, #777777);
+  background-repeat: no-repeat;
 }
 
 .list {
@@ -43,7 +44,10 @@ body {
   margin-top: 30px;
   margin-left: 30px;
   width: calc((100% / 4) - 30px);
-  background-color: rgb(231, 200, 200, 0.5);
+  background-color: transparent;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
 }
 .list-card:hover {
   box-shadow: 3px 5px 10px 0px rgba(0, 255, 255, 1);
@@ -62,10 +66,21 @@ body {
   padding-bottom: 5px;
   padding-left: 10px;
 
+  color: rgba(0, 255, 255, 1);
+  background-color: transparent;
+  border: 1px solid rgb(178, 255, 255);
   border-radius: 10px;
 }
+.load-more-btn:enabled {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
 .load-more-btn:hover {
   box-shadow: 3px 5px 10px 0px rgba(0, 255, 255, 1);
+  border: 1px solid rgba(0, 255, 255, 1);
+  color: rgba(0, 0, 0, 0.5);
 }
 .btn-box {
   text-align: center;
@@ -84,7 +99,12 @@ body {
   height: 50px;
   padding: 10px;
 
+  background-color: rgb(150, 255, 255, 0.1);
+  border: 1px solid rgb(178, 255, 255);
   border-radius: 10px;
+}
+.form-imput::placeholder {
+  color: rgba(0, 255, 255, 1);
 }
 .form-imput:focus {
   box-shadow: 3px 5px 10px 0px rgba(0, 255, 255, 1);
