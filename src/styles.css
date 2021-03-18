@@ -109,7 +109,7 @@ body {
   background-color: rgb(150, 255, 255, 0.1);
   border: 1px solid rgb(178, 255, 255);
   border-radius: 10px;
-  color: rgba(0, 255, 255, 1);
+  color: rgb(239, 245, 245);
 }
 .form-imput::placeholder {
   color: rgba(0, 255, 255, 1);
@@ -120,8 +120,9 @@ body {
   transition: 300ms;
 }
 .btn-submit {
-  position: relative;
-  left: -100px;
+  position: absolute;
+  left: 915px;
+  top: 120px;
   padding-top: 5px;
   padding-right: 10px;
   padding-bottom: 5px;
@@ -136,4 +137,8 @@ body {
   box-shadow: 1px 1px 20px 0px rgba(0, 255, 255, 1);
   border-radius: 15px;
   transition: 300ms;
+}
+.title {
+  color: rgb(223, 255, 255);
+  text-transform: uppercase;
 }
