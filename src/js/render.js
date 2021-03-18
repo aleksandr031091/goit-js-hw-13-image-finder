@@ -1,6 +1,8 @@
 import fetchImages from '../js/fetchImages';
-
 import cardMarkupTpl from '../templates/cardMarkup.hbs';
+// import '@pnotify/core/dist/PNotify.css';
+// import '@pnotify/core/dist/BrightTheme.css';
+// import { error } from '@pnotify/core/dist/PNotify.js';
 
 const refs = {
   galery: document.querySelector('#galery'),
@@ -50,6 +52,3 @@ function setImageInMarkup() {
     refs.leadMore.textContent = 'Load more';
   });
 }
-
-// сделать скролл
-// сделать оформление

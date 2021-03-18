@@ -11,6 +11,7 @@ function fetchImages(queryImage, page) {
     if (response.ok) {
       return response.json();
     }
+    throw new Error('not found');
   });
 }
 export default fetchImages;

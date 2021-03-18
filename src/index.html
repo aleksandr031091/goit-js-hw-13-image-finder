@@ -9,27 +9,38 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+    />
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="query"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-    </form>
-    <ul class="gallery" id="galery">
-      <!-- Список <li> с карточками изображений -->
-    </ul>
-    <button
-      type="button"
-      disabled="true"
-      class="load-more-btn"
-      data-action="Load more"
-      id="leadMore"
-    >
-      Load more
-    </button>
+    <div class="form-box">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Search images..."
+          class="form-imput"
+        />
+      </form>
+    </div>
+    <div class="galery-container">
+      <ul class="list gallery" id="galery">
+        <!-- Список <li> с карточками изображений -->
+      </ul>
+    </div>
+    <div class="btn-box">
+      <button
+        type="button"
+        disabled="true"
+        class="load-more-btn"
+        data-action="Load more"
+        id="leadMore"
+      >
+        Load more
+      </button>
+    </div>
   </body>
 </html>
