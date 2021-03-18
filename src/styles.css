@@ -18,7 +18,7 @@ img {
 }
 body {
   height: 100vh;
-  background: linear-gradient(to top, #ffffff, #777777);
+  background: linear-gradient(to top, #ffffff, #5e5e5e);
   background-repeat: no-repeat;
 }
 
@@ -45,12 +45,12 @@ body {
   margin-left: 30px;
   width: calc((100% / 4) - 30px);
   background-color: transparent;
-  border: 2px solid rgba(0, 255, 255, 0.3);
+  border: 2px solid rgba(0, 255, 255, 0.5);
   border-radius: 5px;
   overflow: hidden;
 }
 .list-card:hover {
-  box-shadow: 3px 5px 10px 0px rgba(0, 255, 255, 1);
+  box-shadow: 1px 1px 20px 0px rgba(0, 255, 255, 1);
 }
 .stats {
   display: flex;
@@ -66,9 +66,9 @@ body {
   padding-bottom: 5px;
   padding-left: 10px;
 
-  color: rgba(0, 255, 255, 1);
+  color: rgb(181, 241, 241);
   background-color: transparent;
-  border: 1px solid rgb(178, 255, 255);
+  border: 1px solid rgb(161, 233, 233);
   border-radius: 10px;
 }
 .load-more-btn:enabled {
@@ -102,10 +102,85 @@ body {
   background-color: rgb(150, 255, 255, 0.1);
   border: 1px solid rgb(178, 255, 255);
   border-radius: 10px;
+  color: rgba(0, 255, 255, 1);
 }
 .form-imput::placeholder {
   color: rgba(0, 255, 255, 1);
 }
 .form-imput:focus {
   box-shadow: 3px 5px 10px 0px rgba(0, 255, 255, 1);
+}
+
+.lightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) var(--timing-function);
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.lightbox__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox__content {
+  transform: scale(0.95);
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.lightbox.is-open .lightbox__content {
+  transform: scale(1);
+}
+
+.lightbox__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+.lightbox__button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--animation-duration) var(--timing-function);
+  outline: none;
+  background-image: url('../images/icon-close.svg');
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+.lightbox__button:hover,
+.lightbox__button:focus {
+  background-color: rgba(0, 0, 0, 0.5);
 }

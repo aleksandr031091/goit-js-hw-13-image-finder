@@ -1,8 +1,9 @@
-import fetchImages from '../js/fetchImages';
-import cardMarkupTpl from '../templates/cardMarkup.hbs';
 // import '@pnotify/core/dist/PNotify.css';
 // import '@pnotify/core/dist/BrightTheme.css';
 // import { error } from '@pnotify/core/dist/PNotify.js';
+import fetchImages from '../js/fetchImages';
+import cardMarkupTpl from '../templates/cardMarkup.hbs';
+import { onClickImage } from '../js/modal';
 
 const refs = {
   galery: document.querySelector('#galery'),
@@ -10,7 +11,7 @@ const refs = {
   leadMore: document.querySelector('#leadMore'),
 };
 
-// refs.galery.addEventListener('click', onClickImage);
+refs.galery.addEventListener('click', onClickImage);
 refs.searchForm.addEventListener('submit', onSubmit);
 refs.leadMore.addEventListener('click', onLeadMore);
 
@@ -34,6 +35,7 @@ function onSubmit(e) {
 
 function onLeadMore() {
   page += 1;
+  setImageInMarkup();
   setTimeout(() => {
     window.scrollTo({
       top: document.body.scrollHeight,
@@ -41,7 +43,6 @@ function onLeadMore() {
       behavior: 'smooth',
     });
   }, 300);
-  setImageInMarkup();
 }
 
 function setImageInMarkup() {
