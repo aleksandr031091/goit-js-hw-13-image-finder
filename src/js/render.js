@@ -3,7 +3,7 @@
 // import { error } from '@pnotify/core/dist/PNotify.js';
 import fetchImages from '../js/fetchImages';
 import cardMarkupTpl from '../templates/cardMarkup.hbs';
-import { onClickImage } from '../js/modal';
+// import { onClickImage } from '../js/modal';
 
 const refs = {
   galery: document.querySelector('#galery'),
@@ -11,7 +11,7 @@ const refs = {
   leadMore: document.querySelector('#leadMore'),
 };
 
-refs.galery.addEventListener('click', onClickImage);
+// refs.galery.addEventListener('click', onClickImage);
 refs.searchForm.addEventListener('submit', onSubmit);
 refs.leadMore.addEventListener('click', onLeadMore);
 

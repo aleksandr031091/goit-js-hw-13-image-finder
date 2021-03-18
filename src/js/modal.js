@@ -1,8 +1,10 @@
-function onClickImage(e) {
-  e.preventDefault();
+// import * as basicLightbox from 'basiclightbox';
 
-  if (e.target.odeName !== 'img') {
-    return;
-  }
-}
-export { onClickImage };
+// function onClickImage(e) {
+//   e.preventDefault();
+
+//   if (e.target.odeName !== 'img') {
+//     return;
+//   }
+// }
+// export { onClickImage };
