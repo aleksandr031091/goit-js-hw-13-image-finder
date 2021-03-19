@@ -1,9 +1,9 @@
-// import '@pnotify/core/dist/PNotify.css';
-// import '@pnotify/core/dist/BrightTheme.css';
-// import { error } from '@pnotify/core/dist/PNotify.js';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
+import { error, message } from '@pnotify/core/dist/PNotify.js';
 import fetchImages from '../js/fetchImages';
 import cardMarkupTpl from '../templates/cardMarkup.hbs';
-// import { onClickImage } from '../js/modal';
+import { onClickImage } from '../js/modal';
 
 const refs = {
   galery: document.querySelector('#galery'),
@@ -11,7 +11,7 @@ const refs = {
   leadMore: document.querySelector('#leadMore'),
 };
 
-// refs.galery.addEventListener('click', onClickImage);
+refs.galery.addEventListener('click', onClickImage);
 refs.searchForm.addEventListener('submit', onSubmit);
 refs.leadMore.addEventListener('click', onLeadMore);
 
@@ -29,7 +29,10 @@ function onSubmit(e) {
 
   refs.galery.innerHTML = '';
 
-  setImageInMarkup();
+  if (queryImage === '') {
+    return submitEmptyInput();
+  }
+  setImageInMarkup(message);
 }
 
 function onLeadMore() {
@@ -53,10 +56,25 @@ function setImageInMarkup(shouldScroll = false) {
 
     if (data.hits.length < 12) {
       refs.leadMore.classList.add('hiden');
+      if (data.hits.length < 1) {
+        sabmitInvalitDataInInput();
+      }
       return;
     }
 
     refs.leadMore.disabled = false;
-    refs.leadMore.textContent = 'Load more';
+    refs.leadMore.textContent = 'Load more...';
+  });
+}
+function submitEmptyInput() {
+  error({
+    text: 'Please enter something!',
+    delay: 2000,
+  });
+}
+function sabmitInvalitDataInInput() {
+  error({
+    text: 'Nothing found,please try another query',
+    delay: 2000,
   });
 }

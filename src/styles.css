@@ -122,9 +122,10 @@ body {
   transition: 300ms;
 }
 .btn-submit {
-  position: absolute;
+  /* position: absolute;
   left: 915px;
-  top: 120px;
+  top: 120px; */
+  margin-left: -80px;
   padding-top: 5px;
   padding-right: 10px;
   padding-bottom: 5px;
@@ -134,11 +135,13 @@ body {
   background-color: transparent;
   border: none;
 }
-.btn-submit:hover {
+.btn-submit:hover,
+.btn-submit:focus {
   color: rgba(0, 255, 255, 1);
   box-shadow: 1px 1px 20px 0px rgba(0, 255, 255, 1);
   border-radius: 15px;
   transition: 300ms;
+  outline: transparent;
 }
 .title {
   color: rgb(223, 255, 255);
