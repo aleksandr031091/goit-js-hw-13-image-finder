@@ -17,7 +17,6 @@ refs.leadMore.addEventListener('click', onLeadMore);
 
 let page = 1;
 let queryImage = '';
-refs.leadMore.textContent = 'Loading...';
 
 function setMarkupInGalery(page) {
   refs.galery.insertAdjacentHTML('beforeend', cardMarkupTpl(page));
@@ -35,20 +34,28 @@ function onSubmit(e) {
 
 function onLeadMore() {
   page += 1;
-  setImageInMarkup();
-  setTimeout(() => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }, 300);
+  setImageInMarkup(true);
 }
 
-function setImageInMarkup() {
+function setImageInMarkup(shouldScroll = false) {
+  refs.leadMore.classList.remove('hiden');
   refs.leadMore.disabled = true;
+  refs.leadMore.textContent = 'Loading...';
   fetchImages(queryImage, page).then(data => {
     setMarkupInGalery(data.hits);
+
+    if (shouldScroll) {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
+      });
+    }
+
+    if (data.hits.length < 12) {
+      refs.leadMore.classList.add('hiden');
+      return;
+    }
+
     refs.leadMore.disabled = false;
     refs.leadMore.textContent = 'Load more';
   });
