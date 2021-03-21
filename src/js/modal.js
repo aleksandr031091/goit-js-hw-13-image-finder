@@ -4,9 +4,9 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 function onClickImage(e) {
   e.preventDefault();
 
-  //   if (e.target.nodeName !== 'img') {
-  //     return;
-  //   }
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
 
   const imageModal = `<img src="${e.target.dataset.sourse} alt="image"/>"`;
   const instance = basicLightbox.create(imageModal);
